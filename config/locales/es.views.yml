@@ -12,4 +12,6 @@ es:
       new_link: 'Nueva imágen'
 
     new:
-      title: 'Nueva imágen'
+      title: 'Nueva %{model}'
+      form:
+        error: 'Ha ocurrido un error al intentar guardar la %{model}'

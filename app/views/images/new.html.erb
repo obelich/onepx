@@ -1,9 +1,19 @@
-<h1><%= t('.title') %></h1>
+<%- model_name = @image.class.model_name.human.downcase %>
+
+<h1><%= t('.title', model: model_name) %></h1>
 
 <%= form_for @image do |form| %>
+  <%- if @image.errors.any? %>
+    <div class='form-error'>
+      <p><%= t('.form.error', model: model_name) %></p>
+    </div>
+  <% end %>
   <div class='field'>
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <%- if @image.errors[:name].any? %>
+      <span class='field-error'><%= @image.errors[:name].first %></span>
+    <% end %>
   </div>
   <div class='field'>
     <%= form.label :description %>
