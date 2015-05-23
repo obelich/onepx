@@ -2,7 +2,7 @@ class CustomFormBuilder < ActionView::Helpers::FormBuilder
   def form_error
     if self.object.errors.any?
       plural_name = self.object.class.model_name.plural
-      model_name = self.object.class.model_name.human.downcase
+      model_name = self.object.class.model_name.human
       is_new = self.object.persisted? ? 'edit' : 'new'
 
       @template.content_tag :div, class: 'form-error' do

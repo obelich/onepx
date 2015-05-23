@@ -10,7 +10,7 @@ class ImagesController < ApplicationController
     @image = Image.new secure_params
 
     if @image.save
-      return redirect_to images_path
+      return redirect_to images_path, notice: t('.created', model: @image.class.model_name.human)
     end
 
     render :new
