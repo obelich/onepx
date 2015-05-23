@@ -14,4 +14,4 @@ es:
     new:
       title: 'Nueva %{model}'
       form:
-        error: 'Ha ocurrido un error al intentar guardar la %{model}'
+        error: 'Ha ocurrido un error al intentar crear la %{model}'
