@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   def index
+    @images = Image.all
   end
 
   def new
@@ -18,6 +19,7 @@ class ImagesController < ApplicationController
 
   private
   def secure_params
-    params.require(:image).permit :name, :description, :category, :tags_text
+    params.require(:image).permit :name, :description, :category,
+      :tags_text, :photo
   end
 end
